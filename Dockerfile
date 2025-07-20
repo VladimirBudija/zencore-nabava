@@ -5,6 +5,9 @@ WORKDIR /app
 # Copy backend directory
 COPY backend/ .
 
+# Copy start script
+COPY start.py .
+
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -12,5 +15,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PORT=8000
 EXPOSE $PORT
 
-# Use Railway's port with proper environment variable handling
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"] 
+# Use Python start script
+CMD ["python", "start.py"] 
