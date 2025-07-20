@@ -12,5 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PORT=8000
 EXPOSE $PORT
 
-# Use Railway's port
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"] 
+# Use Railway's port with proper environment variable handling
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"] 
