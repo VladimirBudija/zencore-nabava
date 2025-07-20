@@ -2,6 +2,9 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
+# Copy requirements.txt first (for better caching)
+COPY requirements.txt .
+
 # Copy backend directory
 COPY backend/ .
 
