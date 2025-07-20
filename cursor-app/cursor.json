@@ -1,0 +1,245 @@
+{
+  "name": "ZenCore Material Management",
+  "description": "Sustav za materijalno knjigovodstvo",
+  "version": "1.0.0",
+  "dataSources": [
+    {
+      "name": "ZenCore API",
+      "type": "rest",
+      "baseUrl": "http://localhost:8000",
+      "auth": {
+        "type": "bearer",
+        "tokenUrl": "http://localhost:8000/auth/token",
+        "usernameField": "username",
+        "passwordField": "password"
+      },
+      "endpoints": {
+        "materials": {
+          "path": "/materials",
+          "method": "GET",
+          "description": "Lista svih materijala"
+        },
+        "material": {
+          "path": "/materials/{id}",
+          "method": "GET",
+          "description": "Detalji materijala s kalkulacijama"
+        },
+        "vendors": {
+          "path": "/vendors",
+          "method": "GET",
+          "description": "Lista svih dobavljača"
+        },
+        "offers": {
+          "path": "/offers",
+          "method": "GET",
+          "description": "Lista svih ponuda"
+        },
+        "purchase_orders": {
+          "path": "/purchase-orders",
+          "method": "GET",
+          "description": "Lista svih narudžbi"
+        },
+        "receipts": {
+          "path": "/receipts",
+          "method": "GET",
+          "description": "Lista svih prijema"
+        },
+        "consumptions": {
+          "path": "/consumptions",
+          "method": "GET",
+          "description": "Lista svih utrošaka"
+        },
+        "dashboard": {
+          "path": "/dashboard/summary",
+          "method": "GET",
+          "description": "Dashboard rekapitulacija"
+        }
+      }
+    }
+  ],
+  "pages": [
+    {
+      "name": "Dashboard",
+      "path": "/",
+      "type": "dashboard",
+      "dataSource": "ZenCore API",
+      "endpoint": "dashboard",
+      "layout": {
+        "type": "grid",
+        "columns": 3,
+        "widgets": [
+          {
+            "type": "metric",
+            "title": "Ukupan broj materijala",
+            "value": "{{total_materials}}",
+            "color": "blue"
+          },
+          {
+            "type": "metric",
+            "title": "Materijali s niskim zalihama",
+            "value": "{{low_stock_materials_count}}",
+            "color": "red"
+          },
+          {
+            "type": "metric",
+            "title": "Aktivne narudžbe",
+            "value": "{{active_purchase_orders}}",
+            "color": "green"
+          },
+          {
+            "type": "table",
+            "title": "Materijali s niskim zalihama",
+            "data": "{{low_stock_materials}}",
+            "columns": [
+              {"key": "code", "title": "Kod"},
+              {"key": "name", "title": "Naziv"},
+              {"key": "current_stock", "title": "Trenutna zaliha"},
+              {"key": "safety_stock", "title": "Sigurnosna zaliha"},
+              {"key": "stock_status", "title": "Status"}
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Materijali",
+      "path": "/materials",
+      "type": "list",
+      "dataSource": "ZenCore API",
+      "endpoint": "materials",
+      "columns": [
+        {"key": "code", "title": "Kod", "sortable": true},
+        {"key": "name", "title": "Naziv", "sortable": true},
+        {"key": "unit", "title": "Jedinica"},
+        {"key": "category", "title": "Kategorija", "sortable": true},
+        {"key": "unit_price", "title": "Cijena", "type": "currency"},
+        {"key": "is_active", "title": "Aktivan", "type": "boolean"}
+      ],
+      "actions": [
+        {
+          "type": "create",
+          "label": "Novi materijal",
+          "form": {
+            "fields": [
+              {"name": "code", "label": "Kod", "type": "text", "required": true},
+              {"name": "name", "label": "Naziv", "type": "text", "required": true},
+              {"name": "description", "label": "Opis", "type": "textarea"},
+              {"name": "unit", "label": "Jedinica", "type": "text", "required": true},
+              {"name": "opening_stock", "label": "Početna zaliha", "type": "number"},
+              {"name": "safety_stock", "label": "Sigurnosna zaliha", "type": "number"},
+              {"name": "monthly_forecast", "label": "Mjesečni forecast", "type": "number"},
+              {"name": "unit_price", "label": "Cijena", "type": "number"},
+              {"name": "category", "label": "Kategorija", "type": "select", "options": ["repromaterijal", "usluga", "gotov proizvod"]}
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Detalji materijala",
+      "path": "/materials/:id",
+      "type": "detail",
+      "dataSource": "ZenCore API",
+      "endpoint": "material",
+      "sections": [
+        {
+          "title": "Osnovni podaci",
+          "fields": [
+            {"key": "code", "label": "Kod"},
+            {"key": "name", "label": "Naziv"},
+            {"key": "description", "label": "Opis"},
+            {"key": "unit", "label": "Jedinica"},
+            {"key": "category", "label": "Kategorija"},
+            {"key": "unit_price", "label": "Cijena", "type": "currency"}
+          ]
+        },
+        {
+          "title": "Kalkulacije",
+          "fields": [
+            {"key": "opening_stock", "label": "Početna zaliha"},
+            {"key": "current_stock", "label": "Trenutna zaliha", "color": "blue"},
+            {"key": "safety_stock", "label": "Sigurnosna zaliha"},
+            {"key": "monthly_forecast", "label": "Mjesečni forecast"},
+            {"key": "recommended_po", "label": "Preporučena narudžba", "color": "green"},
+            {"key": "stock_status", "label": "Status zaliha", "type": "badge"}
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dobavljači",
+      "path": "/vendors",
+      "type": "list",
+      "dataSource": "ZenCore API",
+      "endpoint": "vendors",
+      "columns": [
+        {"key": "code", "title": "Kod", "sortable": true},
+        {"key": "name", "title": "Naziv", "sortable": true},
+        {"key": "contact_person", "title": "Kontakt osoba"},
+        {"key": "email", "title": "E-mail"},
+        {"key": "phone", "title": "Telefon"},
+        {"key": "is_active", "title": "Aktivan", "type": "boolean"}
+      ]
+    },
+    {
+      "name": "Ponude",
+      "path": "/offers",
+      "type": "list",
+      "dataSource": "ZenCore API",
+      "endpoint": "offers",
+      "columns": [
+        {"key": "offer_number", "title": "Broj ponude", "sortable": true},
+        {"key": "material_id", "title": "Materijal"},
+        {"key": "vendor_id", "title": "Dobavljač"},
+        {"key": "unit_price", "title": "Cijena", "type": "currency"},
+        {"key": "quantity", "title": "Količina"},
+        {"key": "status", "title": "Status", "type": "badge"}
+      ]
+    },
+    {
+      "name": "Narudžbe",
+      "path": "/purchase-orders",
+      "type": "list",
+      "dataSource": "ZenCore API",
+      "endpoint": "purchase_orders",
+      "columns": [
+        {"key": "po_number", "title": "Broj narudžbe", "sortable": true},
+        {"key": "material_id", "title": "Materijal"},
+        {"key": "vendor_id", "title": "Dobavljač"},
+        {"key": "quantity", "title": "Količina"},
+        {"key": "total_amount", "title": "Ukupan iznos", "type": "currency"},
+        {"key": "status", "title": "Status", "type": "badge"}
+      ]
+    },
+    {
+      "name": "Prijemi",
+      "path": "/receipts",
+      "type": "list",
+      "dataSource": "ZenCore API",
+      "endpoint": "receipts",
+      "columns": [
+        {"key": "receipt_number", "title": "Broj prijema", "sortable": true},
+        {"key": "material_id", "title": "Materijal"},
+        {"key": "vendor_id", "title": "Dobavljač"},
+        {"key": "quantity", "title": "Količina"},
+        {"key": "receipt_date", "title": "Datum prijema", "type": "date"},
+        {"key": "total_amount", "title": "Ukupan iznos", "type": "currency"}
+      ]
+    },
+    {
+      "name": "Utrošak",
+      "path": "/consumptions",
+      "type": "list",
+      "dataSource": "ZenCore API",
+      "endpoint": "consumptions",
+      "columns": [
+        {"key": "consumption_number", "title": "Broj utroška", "sortable": true},
+        {"key": "material_id", "title": "Materijal"},
+        {"key": "quantity", "title": "Količina"},
+        {"key": "consumption_date", "title": "Datum utroška", "type": "date"},
+        {"key": "project", "title": "Projekt"},
+        {"key": "cost_center", "title": "Centar troškova"}
+      ]
+    }
+  ]
+} 

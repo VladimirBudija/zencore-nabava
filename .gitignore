@@ -1,0 +1,363 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+#   For a library or package, you might want to ignore these files since the code is
+#   intended to run in multiple environments; otherwise, check them in:
+# .python-version
+
+# pipenv
+#   According to pypa/pipenv#598, it is recommended to include Pipfile.lock in version control.
+#   However, in case of collaboration, if having platform-specific dependencies or dependencies
+#   having no cross-platform support, pipenv may install dependencies that don't work, or not
+#   install all needed dependencies.
+#Pipfile.lock
+
+# poetry
+#   Similar to Pipfile.lock, it is generally recommended to include poetry.lock in version control.
+#   This is especially recommended for binary packages to ensure reproducibility, and is more
+#   commonly ignored for libraries.
+#   https://python-poetry.org/docs/basic-usage/#commit-your-poetrylock-file-to-version-control
+#poetry.lock
+
+# pdm
+#   Similar to Pipfile.lock, it is generally recommended to include pdm.lock in version control.
+#pdm.lock
+#   pdm stores project-wide configurations in .pdm.toml, but it is recommended to not include it
+#   in version control.
+#   https://pdm.fming.dev/#use-with-ide
+.pdm.toml
+
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow and github.com/pdm-project/pdm
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Railway
+.railway/
+railway.toml
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# pytype static type analyzer
+.pytype/
+
+# Cython debug symbols
+cython_debug/
+
+# PyCharm
+#  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
+#  be added to the global gitignore or merged into this project gitignore.  For a PyCharm
+#  project, it is recommended to include the following files in version control:
+#  - .idea/modules.xml
+#  - .idea/*.iml
+#  - .idea/misc.xml
+#  - .idea/vcs.xml
+#  - .idea/workspace.xml
+#  - .idea/tasks.xml
+#  - .idea/usage.statistics.xml
+#  - .idea/shelf
+#  - .idea/dictionaries
+#  - .idea/runConfigurations
+#  - .idea/inspectionProfiles
+#  - .idea/codeStyles
+#  - .idea/encodings.xml
+#  - .idea/scopes
+#  - .idea/jarRepositories.xml
+#  - .idea/compiler.xml
+#  - .idea/libraries
+#  - .idea/artifacts
+#  - .idea/gradle.xml
+#  - .idea/kotlinc.xml
+#  - .idea/jupyter-settings.xml
+#  - .idea/aws.xml
+#  - .idea/azure.xml
+#  - .idea/remote-mappings.xml
+#  - .idea/remote-dev-servers.xml
+#  - .idea/remote-dev-hosts.xml
+#  - .idea/remote-dev-projects.xml
+#  - .idea/remote-dev-workspaces.xml
+#  - .idea/remote-dev-ssh.xml
+#  - .idea/remote-dev-docker.xml
+#  - .idea/remote-dev-kubernetes.xml
+#  - .idea/remote-dev-helm.xml
+#  - .idea/remote-dev-istio.xml
+#  - .idea/remote-dev-knative.xml
+#  - .idea/remote-dev-openshift.xml
+#  - .idea/remote-dev-minikube.xml
+#  - .idea/remote-dev-kind.xml
+#  - .idea/remote-dev-k3s.xml
+#  - .idea/remote-dev-microk8s.xml
+#  - .idea/remote-dev-rancher.xml
+#  - .idea/remote-dev-eks.xml
+#  - .idea/remote-dev-gke.xml
+#  - .idea/remote-dev-aks.xml
+#  - .idea/remote-dev-ecs.xml
+#  - .idea/remote-dev-fargate.xml
+#  - .idea/remote-dev-lambda.xml
+#  - .idea/remote-dev-step-functions.xml
+#  - .idea/remote-dev-api-gateway.xml
+#  - .idea/remote-dev-cloudformation.xml
+#  - .idea/remote-dev-terraform.xml
+#  - .idea/remote-dev-ansible.xml
+#  - .idea/remote-dev-chef.xml
+#  - .idea/remote-dev-puppet.xml
+#  - .idea/remote-dev-salt.xml
+#  - .idea/remote-dev-jenkins.xml
+#  - .idea/remote-dev-gitlab.xml
+#  - .idea/remote-dev-github.xml
+#  - .idea/remote-dev-bitbucket.xml
+#  - .idea/remote-dev-azure-devops.xml
+#  - .idea/remote-dev-teamcity.xml
+#  - .idea/remote-dev-bamboo.xml
+#  - .idea/remote-dev-circleci.xml
+#  - .idea/remote-dev-travis.xml
+#  - .idea/remote-dev-appveyor.xml
+#  - .idea/remote-dev-drone.xml
+#  - .idea/remote-dev-concourse.xml
+#  - .idea/remote-dev-spinnaker.xml
+#  - .idea/remote-dev-argocd.xml
+#  - .idea/remote-dev-flux.xml
+#  - .idea/remote-dev-tekton.xml
+#  - .idea/remote-dev-jenkins-x.xml
+#  - .idea/remote-dev-prow.xml
+#  - .idea/remote-dev-buildkite.xml
+#  - .idea/remote-dev-semaphore.xml
+#  - .idea/remote-dev-codeship.xml
+#  - .idea/remote-dev-wercker.xml
+#  - .idea/remote-dev-shippable.xml
+#  - .idea/remote-dev-snap-ci.xml
+#  - .idea/remote-dev-magnum-ci.xml
+#  - .idea/remote-dev-solano.xml
+#  - .idea/remote-dev-codeship-pro.xml
+#  - .idea/remote-dev-buddy.xml
+#  - .idea/remote-dev-deploybot.xml
+#  - .idea/remote-dev-deployhq.xml
+#  - .idea/remote-dev-deploypro.xml
+#  - .idea/remote-dev-deployio.xml
+#  - .idea/remote-dev-deployer.xml
+#  - .idea/remote-dev-deploy.xml
+#  - .idea/remote-dev-deployer-pro.xml
+#  - .idea/remote-dev-deployer-io.xml
+#  - .idea/remote-dev-deployer-hq.xml
+#  - .idea/remote-dev-deployer-bot.xml
+#  - .idea/remote-dev-deployer-buddy.xml
+#  - .idea/remote-dev-deployer-codeship.xml
+#  - .idea/remote-dev-deployer-solano.xml
+#  - .idea/remote-dev-deployer-magnum.xml
+#  - .idea/remote-dev-deployer-shippable.xml
+#  - .idea/remote-dev-deployer-wercker.xml
+#  - .idea/remote-dev-deployer-semaphore.xml
+#  - .idea/remote-dev-deployer-buildkite.xml
+#  - .idea/remote-dev-deployer-prow.xml
+#  - .idea/remote-dev-deployer-jenkins-x.xml
+#  - .idea/remote-dev-deployer-tekton.xml
+#  - .idea/remote-dev-deployer-flux.xml
+#  - .idea/remote-dev-deployer-argocd.xml
+#  - .idea/remote-dev-deployer-spinnaker.xml
+#  - .idea/remote-dev-deployer-concourse.xml
+#  - .idea/remote-dev-deployer-drone.xml
+#  - .idea/remote-dev-deployer-appveyor.xml
+#  - .idea/remote-dev-deployer-travis.xml
+#  - .idea/remote-dev-deployer-circleci.xml
+#  - .idea/remote-dev-deployer-bamboo.xml
+#  - .idea/remote-dev-deployer-teamcity.xml
+#  - .idea/remote-dev-deployer-azure-devops.xml
+#  - .idea/remote-dev-deployer-bitbucket.xml
+#  - .idea/remote-dev-deployer-github.xml
+#  - .idea/remote-dev-deployer-gitlab.xml
+#  - .idea/remote-dev-deployer-jenkins.xml
+#  - .idea/remote-dev-deployer-salt.xml
+#  - .idea/remote-dev-deployer-puppet.xml
+#  - .idea/remote-dev-deployer-chef.xml
+#  - .idea/remote-dev-deployer-ansible.xml
+#  - .idea/remote-dev-deployer-terraform.xml
+#  - .idea/remote-dev-deployer-cloudformation.xml
+#  - .idea/remote-dev-deployer-api-gateway.xml
+#  - .idea/remote-dev-deployer-step-functions.xml
+#  - .idea/remote-dev-deployer-lambda.xml
+#  - .idea/remote-dev-deployer-fargate.xml
+#  - .idea/remote-dev-deployer-ecs.xml
+#  - .idea/remote-dev-deployer-aks.xml
+#  - .idea/remote-dev-deployer-gke.xml
+#  - .idea/remote-dev-deployer-eks.xml
+#  - .idea/remote-dev-deployer-rancher.xml
+#  - .idea/remote-dev-deployer-microk8s.xml
+#  - .idea/remote-dev-deployer-k3s.xml
+#  - .idea/remote-dev-deployer-kind.xml
+#  - .idea/remote-dev-deployer-minikube.xml
+#  - .idea/remote-dev-deployer-openshift.xml
+#  - .idea/remote-dev-deployer-knative.xml
+#  - .idea/remote-dev-deployer-istio.xml
+#  - .idea/remote-dev-deployer-helm.xml
+#  - .idea/remote-dev-deployer-kubernetes.xml
+#  - .idea/remote-dev-deployer-docker.xml
+#  - .idea/remote-dev-deployer-ssh.xml
+#  - .idea/remote-dev-deployer-workspaces.xml
+#  - .idea/remote-dev-deployer-projects.xml
+#  - .idea/remote-dev-deployer-hosts.xml
+#  - .idea/remote-dev-deployer-servers.xml
+#  - .idea/remote-dev-deployer-mappings.xml
+#  - .idea/remote-dev-deployer-azure.xml
+#  - .idea/remote-dev-deployer-aws.xml
+#  - .idea/remote-dev-deployer-jupyter.xml
+#  - .idea/remote-dev-deployer-kotlinc.xml
+#  - .idea/remote-dev-deployer-gradle.xml
+#  - .idea/remote-dev-deployer-artifacts.xml
+#  - .idea/remote-dev-deployer-libraries.xml
+#  - .idea/remote-dev-deployer-compiler.xml
+#  - .idea/remote-dev-deployer-jarRepositories.xml
+#  - .idea/remote-dev-deployer-scopes.xml
+#  - .idea/remote-dev-deployer-encodings.xml
+#  - .idea/remote-dev-deployer-codeStyles.xml
+#  - .idea/remote-dev-deployer-inspectionProfiles.xml
+#  - .idea/remote-dev-deployer-runConfigurations.xml
+#  - .idea/remote-dev-deployer-dictionaries.xml
+#  - .idea/remote-dev-deployer-shelf.xml
+#  - .idea/remote-dev-deployer-usage.statistics.xml
+#  - .idea/remote-dev-deployer-tasks.xml
+#  - .idea/remote-dev-deployer-workspace.xml
+#  - .idea/remote-dev-deployer-vcs.xml
+#  - .idea/remote-dev-deployer-misc.xml
+#  - .idea/remote-dev-deployer-*.iml
+#  - .idea/remote-dev-deployer-modules.xml
+#  - .idea/remote-dev-deployer.xml
+
+# Database
+*.db
+*.sqlite3
+
+# Docker
+.dockerignore
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env.local
+.env.production
+.env.staging
+
+# Temporary files
+*.tmp
+*.temp 
