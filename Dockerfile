@@ -5,8 +5,9 @@ WORKDIR /app
 # Copy backend directory
 COPY backend/ .
 
-# Copy start script
+# Copy start script and version
 COPY start.py .
+COPY VERSION.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
